@@ -1,8 +1,12 @@
-gtime1 = 42000
-gtime2 = 41000
-gtime3 = 38000
-Iniwrite,%gtime1%,save.ini,gtimeSet1, gt1
-Iniwrite,%gtime2%,save.ini,gtimeSet2, gt2
-Iniwrite,%gtime3%,save.ini,gtimeSet3, gt3
+setV1 = 4200
+setV2 = 4100
+setV3 = 3800
+setX3 = 3700
+
+; set
+Iniwrite,%setV1%,save.ini,Value1, v1
+Iniwrite,%setV2%,save.ini,Value2, v2
+Iniwrite,%setV3%,save.ini,Value3, v3
+Iniwrite,%setX3%,save.ini,Value3, x3
 
 ExitAPP
