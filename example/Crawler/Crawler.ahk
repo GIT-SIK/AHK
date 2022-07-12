@@ -1,9 +1,9 @@
 ;; TestPage  -> https://deve1oper.tistory.com/6 -> Title crawling
 
 ;; Type1
-urldownloadtofile,https://deve1oper.tistory.com/6, certi.lisence
-fileread, check1, certi.lisence
-fileDelete, certi.lisence
+urldownloadtofile,https://deve1oper.tistory.com/6, temp.txt
+fileread, check1, temp.txt
+fileDelete, temp.txt
 
 
 ;; Type2
@@ -23,10 +23,6 @@ StringReplace,check2,check2,%del%,, All
 
 RegExMatch(check1,"<h3 class=tit_post>(.*)</h3>",tit1)
 RegExMatch(check2,"<h3 class=tit_post>(.*)</h3>",tit2)
-
-
-;;msgbox,%tit1%,"UrlDownloadFile"
-;;msgbox,%tit2%,"WinHttp"
 
 
 Gui, Add, Text, x22 y34 w350 h25 +Center,  URLDOWNLOADTOFILE
