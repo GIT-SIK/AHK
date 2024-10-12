@@ -1,7 +1,7 @@
 ; AHK Forum
 ; https://www.autohotkey.com/board/topic/38414-pixelcolorx-y-window-transp-off-screen-etc-windows/
 
-PixelColor(pc_x, pc_y, pc_wID)
+getInvisiblePixelColorId(pc_x, pc_y, pc_wID)
 {
 	If pc_wID
 	{
