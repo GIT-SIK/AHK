@@ -4,9 +4,12 @@
  If !pToken := Gdip_Startup()
  {
   MsgBox, 48, , Gdip ERROR
-  ExitApp
+  return
  }
 
+; (Title 기준)  비활성 창의 픽셀 컬러를 검색하여 컬러를 리턴하는 함수
+; winTitle			창 이름 입력
+; windowIndex		중복된 창에 대해 몇 번째 창에서 작업할 건지 인덱스 입력 
 
 InactivePixelGetColorTitle(winTitle, x, y, windowIndex := 0)
 {
@@ -48,6 +51,9 @@ SetColorInGui(color)
 ; ******************************************* 해당 UDF는 Gdip, Acc를 사용하지 않습니다.
 ; AHK Forum
 ; https://www.autohotkey.com/board/topic/38414-pixelcolorx-y-window-transp-off-screen-etc-windows/
+
+
+; (ID 기준)  비활성 창의 픽셀 컬러를 검색하여 컬러를 리턴하는 함수
 
 InactivePixelGetColorId(pc_x, pc_y, pc_wID)
 {
