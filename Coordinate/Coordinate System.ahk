@@ -37,30 +37,39 @@ Gui, Font, S14 CDefault Bold, Calibri
 Gui, Add, Text, x12 y25 w225 h20 +Center, Find Coordinate && Color
 
 Gui, Show, x820 y1 w249 h462, Find Coordinate & Color
-SetTimer, UpdateActiveWindow, 1000  ; 매초 활성 창 이름 업데이트
+;SetTimer, UpdateActiveWindow, 1000  ; 매초 활성 창 이름 업데이트
 return
 
-UpdateActiveWindow:
-    WinGetActiveTitle, activeWindowTitle
-    GuiControl,, ActWin, %activeWindowTitle%
-return
+;UpdateActiveWindow:
+;    WinGetActiveTitle, activeWindowTitle
+;    GuiControl,, ActWin, %activeWindowTitle%
+;return
 
 UpdateRadio:
 GuiControl, text, i, NULL
 GuiControl, text, cl, NULL
 GuiControl, text, i2, NULL
 GuiControl, text, cl2, NULL
+GuiControl,, ActWin, 
 
 UpdateCoordMode:
 Gui, Submit, NoHide
 if (Rel == 1) {
     SetCoordMode("Relative")
+    UpdateActiveWindow()
 } else if (Scr == 1) {
     SetCoordMode("Screen")
 } else if (Cli == 1) {
     SetCoordMode("Client")
+    UpdateActiveWindow()
 }
 return
+
+UpdateActiveWindow() {
+     WinGetActiveTitle, activeWindowTitle
+     GuiControl,, ActWin, %activeWindowTitle%
+}
+
 
 SetCoordMode(mode) {
     if (mode == "Relative") {
@@ -75,6 +84,9 @@ SetCoordMode(mode) {
     }
 GuiControl,, ModeName, %mode% 모드
 }
+
+
+
 
 ; 1번 좌표로 입력 전송
 F7::
